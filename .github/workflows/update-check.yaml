@@ -10,7 +10,8 @@ on:
       - .github/workflows/update-check.yaml
       - update-check.py
   schedule:
-  - cron: '0 0 * * *'  # runs everyday at midnight
+    - cron: '0 0 * * *'  # runs everyday at midnight
+  workflow_dispatch:
 
 jobs:
   check:
