@@ -79,13 +79,13 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master'
     strategy:
       fail-fast: false
       matrix:
         platform:
           - linux/amd64
-          # - linux/arm64/v8
+          - linux/arm64/v8
           # - linux/arm/v7
           # - linux/riscv64
     steps:
